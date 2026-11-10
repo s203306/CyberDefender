@@ -20,7 +20,11 @@ Gracz wciela się w administratora bezpieczeństwa niewielkiej firmy. Jego zadan
 - JavaFX
 - JSON
 
+## Wymagania
+
+- JDK 21
+
 ## Status projektu
 
 Projekt w trakcie realizacji.
-Aktualny etap: analiza wymagań i projektowanie gry.
+Aktualny etap: rozpoczęcie prac.
