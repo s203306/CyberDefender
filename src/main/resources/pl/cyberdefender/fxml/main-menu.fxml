@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<!-- Ekran: Menu główne -->
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="pl.cyberdefender.controller.MainMenuController"
+      styleClass="main-menu"
+      alignment="CENTER"
+      spacing="16.0">
+
+    <padding>
+        <Insets top="40.0" right="40.0" bottom="40.0" left="40.0"/>
+    </padding>
+
+    <Label styleClass="title"
+           text="CYBER DEFENDER"
+           style="-fx-font-size: 48px; -fx-font-weight: bold;"/>
+
+    <Label styleClass="subtitle"
+           text="Edukacyjny symulator reagowania na zagrożenia w sieci komputerowej"
+           wrapText="true"
+           style="-fx-font-size: 18px;"/>
+
+    <Label styleClass="motto"
+           text="Twoim celem jest opanowanie incydentu, nie zdobycie jak najwięcej punktów."
+           wrapText="true"
+           style="-fx-font-size: 14px; -fx-font-style: italic;">
+        <VBox.margin>
+            <Insets bottom="24.0"/>
+        </VBox.margin>
+    </Label>
+
+    <VBox styleClass="menu-buttons" alignment="CENTER" spacing="12.0">
+        <Button styleClass="menu-button" text="Nowa gra"
+                prefWidth="240.0" prefHeight="44.0" onAction="#onNewGame"/>
+        <Button styleClass="menu-button" text="Instrukcja"
+                prefWidth="240.0" prefHeight="44.0" onAction="#onInstructions"/>
+        <Button styleClass="menu-button" text="Wyjście"
+                prefWidth="240.0" prefHeight="44.0" onAction="#onExit"/>
+    </VBox>
+</VBox>
