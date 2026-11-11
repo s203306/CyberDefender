@@ -4,18 +4,22 @@ import javafx.application.Platform;
 import javafx.fxml.FXML;
 
 /** Kontroler menu głównego (main-menu.fxml). */
-public class MainMenuController {
+public class MainMenuController implements NavigatorAware {
+    private SceneNavigator navigator;
+
+    @Override
+    public void setNavigator(SceneNavigator navigator) {
+        this.navigator = navigator;
+    }
 
     @FXML
     private void onNewGame() {
-        // TODO: przejście do wyboru scenariusza
-        System.out.println("Kliknięto: Nowa gra");
+        navigator.show(Screen.SCENARIO_SELECT);
     }
 
     @FXML
     private void onInstructions() {
-        // TODO: przejście do ekranu instrukcji
-        System.out.println("Kliknięto: Instrukcja");
+        navigator.show(Screen.INSTRUCTIONS);
     }
 
     @FXML

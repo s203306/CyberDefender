@@ -1,12 +1,11 @@
 package pl.cyberdefender;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-
-import java.io.IOException;
+import pl.cyberdefender.controller.SceneNavigator;
+import pl.cyberdefender.controller.Screen;
 
 public class App extends Application {
 
@@ -16,11 +15,11 @@ public class App extends Application {
     static final double MIN_HEIGHT = 700;
 
     @Override
-    public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(
-                App.class.getResource("/pl/cyberdefender/fxml/main-menu.fxml"));
-        Parent root = fxmlLoader.load();
-        Scene scene = new Scene(root, WINDOW_WIDTH, WINDOW_HEIGHT);
+    public void start(Stage stage) {
+        Scene scene = new Scene(new StackPane(), WINDOW_WIDTH, WINDOW_HEIGHT);
+
+        SceneNavigator navigator = new SceneNavigator(scene);
+        navigator.show(Screen.MAIN_MENU);
 
         stage.setTitle("CyberDefender");
         stage.setScene(scene);
