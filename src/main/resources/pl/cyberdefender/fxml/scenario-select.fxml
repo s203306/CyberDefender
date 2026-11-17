@@ -19,8 +19,7 @@
     </padding>
 
     <top>
-        <Label styleClass="title" text="%scenarioSelect.title"
-               style="-fx-font-size: 36px; -fx-font-weight: bold;">
+        <Label styleClass="title" text="%scenarioSelect.title">
             <BorderPane.margin>
                 <Insets bottom="16.0"/>
             </BorderPane.margin>
@@ -31,18 +30,17 @@
         <HBox spacing="24.0">
             <ListView fx:id="scenarioList" prefWidth="300.0" minWidth="300.0" maxWidth="300.0"/>
 
-            <VBox styleClass="scenario-details" spacing="12.0" HBox.hgrow="ALWAYS">
-                <Label fx:id="scenarioTitleLabel" wrapText="true"
-                       style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+            <VBox styleClass="scenario-details" spacing="10.0" HBox.hgrow="ALWAYS">
+                <Label fx:id="scenarioTitleLabel" styleClass="details-title" wrapText="true"/>
                 <Label fx:id="descriptionLabel" wrapText="true"/>
 
-                <Label text="%scenarioSelect.label.goal" style="-fx-font-weight: bold;"/>
-                <Label fx:id="goalLabel" wrapText="true"/>
-
-                <Label text="%scenarioSelect.label.learning" style="-fx-font-weight: bold;"/>
+                <Label styleClass="details-header" text="%scenarioSelect.label.learning"/>
                 <Label fx:id="learningLabel" wrapText="true"/>
 
-                <Label text="%scenarioSelect.label.resources" style="-fx-font-weight: bold;"/>
+                <Label styleClass="details-header" text="%scenarioSelect.label.goal"/>
+                <Label fx:id="goalLabel" wrapText="true"/>
+
+                <Label styleClass="details-header" text="%scenarioSelect.label.resources"/>
                 <Label fx:id="resourcesLabel" wrapText="true"/>
             </VBox>
         </HBox>
@@ -54,9 +52,9 @@
                 <Insets top="16.0"/>
             </BorderPane.margin>
             <Button styleClass="menu-button" text="%common.button.back"
-                    prefWidth="160.0" prefHeight="40.0" onAction="#onBack"/>
+                    prefWidth="160.0" prefHeight="44.0" onAction="#onBack"/>
             <Button styleClass="menu-button" text="%scenarioSelect.button.start"
-                    prefWidth="160.0" prefHeight="40.0" onAction="#onStart"/>
+                    prefWidth="160.0" prefHeight="44.0" onAction="#onStart"/>
         </HBox>
     </bottom>
 </BorderPane>

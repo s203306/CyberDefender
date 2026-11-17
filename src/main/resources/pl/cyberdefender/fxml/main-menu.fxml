@@ -17,14 +17,9 @@
         <Insets top="40.0" right="40.0" bottom="40.0" left="40.0"/>
     </padding>
 
-    <Label styleClass="title" text="%menu.title"
-           style="-fx-font-size: 48px; -fx-font-weight: bold;"/>
-
-    <Label styleClass="subtitle" text="%menu.subtitle" wrapText="true"
-           style="-fx-font-size: 18px;"/>
-
-    <Label styleClass="motto" text="%menu.motto" wrapText="true"
-           style="-fx-font-size: 14px; -fx-font-style: italic;">
+    <Label styleClass="title" text="%menu.title"/>
+    <Label styleClass="subtitle" text="%menu.subtitle" wrapText="true"/>
+    <Label styleClass="motto" text="%menu.motto" wrapText="true">
         <VBox.margin>
             <Insets bottom="24.0"/>
         </VBox.margin>
@@ -32,10 +27,10 @@
 
     <VBox styleClass="menu-buttons" alignment="CENTER" spacing="12.0">
         <Button styleClass="menu-button" text="%menu.button.newGame"
-                prefWidth="240.0" prefHeight="44.0" onAction="#onNewGame"/>
+                prefWidth="240.0" prefHeight="48.0" onAction="#onNewGame"/>
         <Button styleClass="menu-button" text="%menu.button.instructions"
-                prefWidth="240.0" prefHeight="44.0" onAction="#onInstructions"/>
+                prefWidth="240.0" prefHeight="48.0" onAction="#onInstructions"/>
         <Button styleClass="menu-button" text="%menu.button.exit"
-                prefWidth="240.0" prefHeight="44.0" onAction="#onExit"/>
+                prefWidth="240.0" prefHeight="48.0" onAction="#onExit"/>
     </VBox>
 </VBox>

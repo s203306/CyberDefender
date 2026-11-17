@@ -19,8 +19,7 @@
     </padding>
 
     <top>
-        <Label styleClass="title" text="%instructions.title"
-               style="-fx-font-size: 36px; -fx-font-weight: bold;">
+        <Label styleClass="title" text="%instructions.title">
             <BorderPane.margin>
                 <Insets bottom="16.0"/>
             </BorderPane.margin>
@@ -29,23 +28,21 @@
 
     <center>
         <ScrollPane fitToWidth="true" styleClass="instructions-scroll">
-            <VBox styleClass="instructions-sections" spacing="20.0">
+            <VBox styleClass="instructions-sections" spacing="24.0">
                 <padding>
                     <Insets top="8.0" right="16.0" bottom="8.0" left="8.0"/>
                 </padding>
 
+                <!-- Cel gry i rola gracza -->
                 <VBox spacing="6.0">
-                    <Label styleClass="section-header" text="%instructions.section.goal.title"
-                           style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
-                    <Label styleClass="section-text" wrapText="true"
-                           text="%instructions.section.goal.text"/>
+                    <Label styleClass="section-header" text="%instructions.section.goal.title"/>
+                    <Label styleClass="section-text" wrapText="true" text="%instructions.section.goal.text"/>
                 </VBox>
 
+                <!-- Przebieg rundy -->
                 <VBox spacing="6.0">
-                    <Label styleClass="section-header" text="%instructions.section.round.title"
-                           style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
-                    <Label styleClass="section-text" wrapText="true"
-                           text="%instructions.section.round.text"/>
+                    <Label styleClass="section-header" text="%instructions.section.round.title"/>
+                    <Label styleClass="section-text" wrapText="true" text="%instructions.section.round.text"/>
                     <Label styleClass="section-text" wrapText="true" text="%instructions.round.order"/>
                     <Label styleClass="section-text" wrapText="true" text="%instructions.round.step1"/>
                     <Label styleClass="section-text" wrapText="true" text="%instructions.round.step2"/>
@@ -53,24 +50,23 @@
                     <Label styleClass="section-text" wrapText="true" text="%instructions.round.after"/>
                 </VBox>
 
+                <!-- Statusy urządzeń -->
                 <VBox spacing="6.0">
-                    <Label styleClass="section-header" text="%instructions.section.status.title"
-                           style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
-                    <Label styleClass="section-text" wrapText="true"
-                           text="%instructions.section.status.text"/>
-                    <Label styleClass="section-text" wrapText="true" text="%instructions.status.unknown"/>
-                    <Label styleClass="section-text" wrapText="true" text="%instructions.status.suspicious"/>
-                    <Label styleClass="section-text" wrapText="true" text="%instructions.status.clean"/>
-                    <Label styleClass="section-text" wrapText="true" text="%instructions.status.infected"/>
+                    <Label styleClass="section-header" text="%instructions.section.status.title"/>
+                    <Label styleClass="section-text" wrapText="true" text="%instructions.section.status.text"/>
+                    <Label styleClass="section-text, status-unknown" wrapText="true" text="%instructions.status.unknown"/>
+                    <Label styleClass="section-text, status-suspicious" wrapText="true" text="%instructions.status.suspicious"/>
+                    <Label styleClass="section-text, status-clean" wrapText="true" text="%instructions.status.clean"/>
+                    <Label styleClass="section-text, status-infected" wrapText="true" text="%instructions.status.infected"/>
                     <Label styleClass="section-text" wrapText="true" text="%instructions.marker.isolated"/>
-                    <Label styleClass="section-text" wrapText="true" text="%instructions.marker.inRepair"/>
+                    <Label styleClass="section-text, status-repair" wrapText="true" text="%instructions.marker.inRepair"/>
                     <Label styleClass="section-text" wrapText="true" text="%instructions.marker.accountBlocked"/>
                     <Label styleClass="section-text" wrapText="true" text="%instructions.marker.critical"/>
                 </VBox>
 
+                <!-- Akcje gracza -->
                 <VBox spacing="6.0">
-                    <Label styleClass="section-header" text="%instructions.section.actions.title"
-                           style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+                    <Label styleClass="section-header" text="%instructions.section.actions.title"/>
                     <Label styleClass="section-text" wrapText="true" text="%instructions.action.viewLogs"/>
                     <Label styleClass="section-text" wrapText="true" text="%instructions.action.scan"/>
                     <Label styleClass="section-text" wrapText="true" text="%instructions.action.isolate"/>
@@ -78,17 +74,17 @@
                     <Label styleClass="section-text" wrapText="true" text="%instructions.action.restore"/>
                 </VBox>
 
+                <!-- Zasoby -->
                 <VBox spacing="6.0">
-                    <Label styleClass="section-header" text="%instructions.section.resources.title"
-                           style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+                    <Label styleClass="section-header" text="%instructions.section.resources.title"/>
                     <Label styleClass="section-text" wrapText="true" text="%instructions.resources.budget"/>
                     <Label styleClass="section-text" wrapText="true" text="%instructions.resources.actionsPerRound"/>
                     <Label styleClass="section-text" wrapText="true" text="%instructions.resources.roundLimit"/>
                 </VBox>
 
+                <!-- Warunki zakończenia -->
                 <VBox spacing="6.0">
-                    <Label styleClass="section-header" text="%instructions.section.end.title"
-                           style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+                    <Label styleClass="section-header" text="%instructions.section.end.title"/>
                     <Label styleClass="section-text" wrapText="true" text="%instructions.end.databaseLost"/>
                     <Label styleClass="section-text" wrapText="true" text="%instructions.end.success"/>
                     <Label styleClass="section-text" wrapText="true" text="%instructions.end.partialSuccess"/>
@@ -105,7 +101,7 @@
                 <Insets top="16.0"/>
             </BorderPane.margin>
             <Button styleClass="menu-button" text="%common.button.back"
-                    prefWidth="160.0" prefHeight="40.0" onAction="#onBack"/>
+                    prefWidth="160.0" prefHeight="44.0" onAction="#onBack"/>
         </HBox>
     </bottom>
 </BorderPane>
