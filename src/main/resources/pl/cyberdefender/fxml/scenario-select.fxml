@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<!-- Ekran: Wybór scenariusza (docs/gui.md) -->
+<!-- Ekran: Wybór scenariusza -->
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="pl.cyberdefender.controller.ScenarioSelectController"
@@ -19,7 +19,7 @@
     </padding>
 
     <top>
-        <Label styleClass="title" text="Wybór scenariusza"
+        <Label styleClass="title" text="%scenarioSelect.title"
                style="-fx-font-size: 36px; -fx-font-weight: bold;">
             <BorderPane.margin>
                 <Insets bottom="16.0"/>
@@ -36,13 +36,13 @@
                        style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
                 <Label fx:id="descriptionLabel" wrapText="true"/>
 
-                <Label text="Cel misji" style="-fx-font-weight: bold;"/>
+                <Label text="%scenarioSelect.label.goal" style="-fx-font-weight: bold;"/>
                 <Label fx:id="goalLabel" wrapText="true"/>
 
-                <Label text="Czego się nauczysz" style="-fx-font-weight: bold;"/>
+                <Label text="%scenarioSelect.label.learning" style="-fx-font-weight: bold;"/>
                 <Label fx:id="learningLabel" wrapText="true"/>
 
-                <Label text="Zasoby" style="-fx-font-weight: bold;"/>
+                <Label text="%scenarioSelect.label.resources" style="-fx-font-weight: bold;"/>
                 <Label fx:id="resourcesLabel" wrapText="true"/>
             </VBox>
         </HBox>
@@ -53,9 +53,9 @@
             <BorderPane.margin>
                 <Insets top="16.0"/>
             </BorderPane.margin>
-            <Button styleClass="menu-button" text="Wstecz"
+            <Button styleClass="menu-button" text="%common.button.back"
                     prefWidth="160.0" prefHeight="40.0" onAction="#onBack"/>
-            <Button styleClass="menu-button" text="Rozpocznij"
+            <Button styleClass="menu-button" text="%scenarioSelect.button.start"
                     prefWidth="160.0" prefHeight="40.0" onAction="#onStart"/>
         </HBox>
     </bottom>

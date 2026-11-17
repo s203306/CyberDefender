@@ -4,11 +4,13 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 
+import java.util.ResourceBundle;
+
 /** Kontroler ekranu wyboru scenariusza (scenario-select.fxml). */
 public class ScenarioSelectController implements NavigatorAware {
 
-    private static final String PLACEHOLDER =
-            "Szczegóły scenariusza zostaną wczytane z pliku JSON (Etap 2).";
+    /** Teksty interfejsu; wstrzykuje je FXMLLoader (nazwa pola musi brzmieć "resources"). */
+    @FXML private ResourceBundle resources;
 
     @FXML private ListView<String> scenarioList;
     @FXML private Label scenarioTitleLabel;
@@ -27,8 +29,8 @@ public class ScenarioSelectController implements NavigatorAware {
     @FXML
     private void initialize() {
         scenarioList.getItems().addAll(
-                "[Podejrzany komputer księgowości]",
-                "[Fałszywy alarm o północy]");
+                "Podejrzany komputer księgowości",
+                "Fałszywy alarm o północy");
 
         scenarioList.getSelectionModel().selectedItemProperty()
                 .addListener((obs, oldTitle, newTitle) -> showDetails(newTitle));
@@ -45,11 +47,12 @@ public class ScenarioSelectController implements NavigatorAware {
             resourcesLabel.setText("");
             return;
         }
+        String empty = resources.getString("scenarioSelect.placeholder.empty");
         scenarioTitleLabel.setText(title);
-        descriptionLabel.setText(PLACEHOLDER);
-        goalLabel.setText("—");
-        learningLabel.setText("—");
-        resourcesLabel.setText("—");
+        descriptionLabel.setText(resources.getString("scenarioSelect.placeholder.details"));
+        goalLabel.setText(empty);
+        learningLabel.setText(empty);
+        resourcesLabel.setText(empty);
     }
 
     @FXML
