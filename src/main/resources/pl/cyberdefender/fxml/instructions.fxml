@@ -4,23 +4,131 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 
-<!-- Ekran: Instrukcja (wersja zastępcza) -->
-<VBox xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
-      fx:controller="pl.cyberdefender.controller.InstructionsController"
-      styleClass="instructions"
-      alignment="CENTER"
-      spacing="24.0">
+<!-- Ekran: Instrukcja -->
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="pl.cyberdefender.controller.InstructionsController"
+            styleClass="instructions">
 
     <padding>
-        <Insets top="40.0" right="40.0" bottom="40.0" left="40.0"/>
+        <Insets top="24.0" right="40.0" bottom="24.0" left="40.0"/>
     </padding>
 
-    <Label styleClass="title"
-           text="Instrukcja"
-           style="-fx-font-size: 36px; -fx-font-weight: bold;"/>
+    <top>
+        <Label styleClass="title" text="Instrukcja"
+               style="-fx-font-size: 36px; -fx-font-weight: bold;">
+            <BorderPane.margin>
+                <Insets bottom="16.0"/>
+            </BorderPane.margin>
+        </Label>
+    </top>
 
-    <Button styleClass="menu-button" text="Wstecz"
-            prefWidth="240.0" prefHeight="44.0" onAction="#onBack"/>
-</VBox>
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="instructions-scroll">
+            <VBox styleClass="instructions-sections" spacing="20.0">
+                <padding>
+                    <Insets top="8.0" right="16.0" bottom="8.0" left="8.0"/>
+                </padding>
+
+                <!-- 1 -->
+                <VBox spacing="6.0">
+                    <Label styleClass="section-header" text="Cel gry i rola gracza"
+                           style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+                    <Label styleClass="section-text" wrapText="true"
+                           text="Gracz pełni rolę administratora bezpieczeństwa małej firmy. Nadzoruje sieć, analizuje alerty i wybiera działania, zanim incydent przerodzi się w poważną awarię. Celem gry jest zabezpieczenie sieci firmy i uchronienie bazy danych przed wrogim przejęciem."/>
+                </VBox>
+
+                <!-- 2 -->
+                <VBox spacing="6.0">
+                    <Label styleClass="section-header" text="Przebieg rundy"
+                           style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+                    <Label styleClass="section-text" wrapText="true"
+                           text="Gra działa na podstawie rund – jedna runda to jeden dzień pracy. Podczas rundy gracz może wykonać kilka akcji, a ich liczba jest ograniczona pulą akcji na rundę."/>
+                    <Label styleClass="section-text" wrapText="true" text="Kolejność działania:"/>
+                    <Label styleClass="section-text" wrapText="true"
+                           text="1. Gracz obserwuje mapę sieci i czyta alerty w Centrum incydentów."/>
+                    <Label styleClass="section-text" wrapText="true" text="2. Gracz wykonuje akcje."/>
+                    <Label styleClass="section-text" wrapText="true" text="3. Gracz kończy rundę."/>
+                    <Label styleClass="section-text" wrapText="true"
+                           text="Po końcu rundy zachodzą zdarzenia zaplanowane w scenariuszu, malware próbuje przedostać się dalej, a gra sprawdza warunki końca."/>
+                </VBox>
+
+                <!-- 3 -->
+                <VBox spacing="6.0">
+                    <Label styleClass="section-header" text="Statusy urządzeń"
+                           style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+                    <Label styleClass="section-text" wrapText="true"
+                           text="Statusy urządzeń to informacja, którą posiada gracz, a nie to, co dzieje się naprawdę z urządzeniem."/>
+                    <Label styleClass="section-text" wrapText="true" text="○ (szary) Brak danych – nic nie sprawdzono."/>
+                    <Label styleClass="section-text" wrapText="true" text="⚠ (żółty) Podejrzane – alert bezpieczeństwa lub dziwne logi."/>
+                    <Label styleClass="section-text" wrapText="true" text="✔ (niebieski) Czyste – skan niczego nie wykrył."/>
+                    <Label styleClass="section-text" wrapText="true" text="✖ (czerwony) Zainfekowane – skan potwierdził malware."/>
+                    <Label styleClass="section-text" wrapText="true"
+                           text="(przerywana ramka) Odizolowane – urządzenie odłączone od sieci, nie pracuje (ale atak nie przejdzie dalej)."/>
+                    <Label styleClass="section-text" wrapText="true" text="⟳ W naprawie – trwa przywracanie urządzenia (trwa 1 rundę)."/>
+                    <Label styleClass="section-text" wrapText="true" text="🔒 Konto zablokowane – nikt nie może zalogować się na to konto."/>
+                    <Label styleClass="section-text" wrapText="true"
+                           text="★ Krytyczne – router, serwer i baza danych; ich utrata najbardziej szkodzi firmie."/>
+                </VBox>
+
+                <!-- 4 -->
+                <VBox spacing="6.0">
+                    <Label styleClass="section-header" text="Akcje gracza"
+                           style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+                    <Label styleClass="section-text" wrapText="true"
+                           text="Sprawdź logi – wskazówka: może zmienić status na Podejrzane albo wyjaśnić fałszywy alarm. Dostępne zawsze, poza urządzeniem w naprawie (koszt: wkrótce)."/>
+                    <Label styleClass="section-text" wrapText="true"
+                           text="Skanuj – pewna odpowiedź: Czyste albo Zainfekowane. Dostępne zawsze, poza urządzeniem w naprawie (koszt: wkrótce)."/>
+                    <Label styleClass="section-text" wrapText="true"
+                           text="Izoluj – zatrzymuje rozprzestrzenianie się zagrożenia, ale wyłącza urządzenie. Dostępne dla nieizolowanych urządzeń (koszt: wkrótce)."/>
+                    <Label styleClass="section-text" wrapText="true"
+                           text="Zablokuj konto – zatrzymuje atakującego, który ukradł hasło. Dostępne na urządzeniach z niezablokowanym kontem (koszt: wkrótce)."/>
+                    <Label styleClass="section-text" wrapText="true"
+                           text="Przywróć – czyści urządzenie i po 1 rundzie podłącza je z powrotem do sieci. Dostępne tylko dla odizolowanego urządzenia (koszt: wkrótce)."/>
+                </VBox>
+
+                <!-- 5 -->
+                <VBox spacing="6.0">
+                    <Label styleClass="section-header" text="Zasoby"
+                           style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+                    <Label styleClass="section-text" wrapText="true"
+                           text="Budżet (np. 20) – pieniądze na całą misję; każda akcja ma swój koszt."/>
+                    <Label styleClass="section-text" wrapText="true"
+                           text="Akcje na rundę (np. 3) – czas zespołu w ciągu dnia; odnawiają się co rundę."/>
+                    <Label styleClass="section-text" wrapText="true"
+                           text="Limit rund (np. 10) – liczba dni na opanowanie incydentu."/>
+                </VBox>
+
+                <!-- 6 -->
+                <VBox spacing="6.0">
+                    <Label styleClass="section-header" text="Warunki zakończenia"
+                           style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+                    <Label styleClass="section-text" wrapText="true"
+                           text="Porażka (natychmiastowa): zagrożenie dociera do bazy danych, a dane firmy zostają przejęte."/>
+                    <Label styleClass="section-text" wrapText="true"
+                           text="Sukces (opanowanie incydentu): każde zainfekowane urządzenie jest odizolowane albo przywrócone, a przejęte konta są zablokowane, zanim minie limit rund."/>
+                    <Label styleClass="section-text" wrapText="true"
+                           text="Częściowy sukces: zagrożenie zostało opanowane, ale w trakcie rozgrywki infekcja doszła do serwera."/>
+                    <Label styleClass="section-text" wrapText="true"
+                           text="Porażka: minął limit rund, a zagrożenie jest dalej aktywne."/>
+                    <Label styleClass="section-text" wrapText="true"
+                           text="Brak budżetu: sam brak pieniędzy nie kończy gry – dalej można kończyć rundy, ale bez wykonywania akcji."/>
+                </VBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER_RIGHT">
+            <BorderPane.margin>
+                <Insets top="16.0"/>
+            </BorderPane.margin>
+            <Button styleClass="menu-button" text="Wstecz"
+                    prefWidth="160.0" prefHeight="40.0" onAction="#onBack"/>
+        </HBox>
+    </bottom>
+</BorderPane>
