@@ -3,24 +3,60 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<!-- Ekran: Wybór scenariusza (wersja zastępcza) -->
-<VBox xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
-      fx:controller="pl.cyberdefender.controller.ScenarioSelectController"
-      styleClass="scenario-select"
-      alignment="CENTER"
-      spacing="24.0">
+<!-- Ekran: Wybór scenariusza (docs/gui.md) -->
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="pl.cyberdefender.controller.ScenarioSelectController"
+            styleClass="scenario-select">
 
     <padding>
-        <Insets top="40.0" right="40.0" bottom="40.0" left="40.0"/>
+        <Insets top="24.0" right="40.0" bottom="24.0" left="40.0"/>
     </padding>
 
-    <Label styleClass="title"
-           text="Wybór scenariusza"
-           style="-fx-font-size: 36px; -fx-font-weight: bold;"/>
+    <top>
+        <Label styleClass="title" text="Wybór scenariusza"
+               style="-fx-font-size: 36px; -fx-font-weight: bold;">
+            <BorderPane.margin>
+                <Insets bottom="16.0"/>
+            </BorderPane.margin>
+        </Label>
+    </top>
 
-    <Button styleClass="menu-button" text="Wstecz"
-            prefWidth="240.0" prefHeight="44.0" onAction="#onBack"/>
-</VBox>
+    <center>
+        <HBox spacing="24.0">
+            <ListView fx:id="scenarioList" prefWidth="300.0" minWidth="300.0" maxWidth="300.0"/>
+
+            <VBox styleClass="scenario-details" spacing="12.0" HBox.hgrow="ALWAYS">
+                <Label fx:id="scenarioTitleLabel" wrapText="true"
+                       style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+                <Label fx:id="descriptionLabel" wrapText="true"/>
+
+                <Label text="Cel misji" style="-fx-font-weight: bold;"/>
+                <Label fx:id="goalLabel" wrapText="true"/>
+
+                <Label text="Czego się nauczysz" style="-fx-font-weight: bold;"/>
+                <Label fx:id="learningLabel" wrapText="true"/>
+
+                <Label text="Zasoby" style="-fx-font-weight: bold;"/>
+                <Label fx:id="resourcesLabel" wrapText="true"/>
+            </VBox>
+        </HBox>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER_RIGHT" spacing="12.0">
+            <BorderPane.margin>
+                <Insets top="16.0"/>
+            </BorderPane.margin>
+            <Button styleClass="menu-button" text="Wstecz"
+                    prefWidth="160.0" prefHeight="40.0" onAction="#onBack"/>
+            <Button styleClass="menu-button" text="Rozpocznij"
+                    prefWidth="160.0" prefHeight="40.0" onAction="#onStart"/>
+        </HBox>
+    </bottom>
+</BorderPane>
