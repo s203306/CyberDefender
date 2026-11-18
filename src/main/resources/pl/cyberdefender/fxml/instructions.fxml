@@ -58,10 +58,10 @@
                     <Label styleClass="section-text, status-suspicious" wrapText="true" text="%instructions.status.suspicious"/>
                     <Label styleClass="section-text, status-clean" wrapText="true" text="%instructions.status.clean"/>
                     <Label styleClass="section-text, status-infected" wrapText="true" text="%instructions.status.infected"/>
-                    <Label styleClass="section-text" wrapText="true" text="%instructions.marker.isolated"/>
-                    <Label styleClass="section-text, status-repair" wrapText="true" text="%instructions.marker.inRepair"/>
-                    <Label styleClass="section-text" wrapText="true" text="%instructions.marker.accountBlocked"/>
-                    <Label styleClass="section-text" wrapText="true" text="%instructions.marker.critical"/>
+                    <Label styleClass="section-text, marker-isolated" wrapText="true" text="%instructions.marker.isolated"/>
+                    <Label styleClass="section-text, marker-repair" wrapText="true" text="%instructions.marker.inRepair"/>
+                    <Label styleClass="section-text, marker-account-blocked" wrapText="true" text="%instructions.marker.accountBlocked"/>
+                    <Label styleClass="section-text, marker-critical" wrapText="true" text="%instructions.marker.critical"/>
                 </VBox>
 
                 <!-- Akcje gracza -->

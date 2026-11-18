@@ -18,7 +18,7 @@
     -cd-status-suspicious:  #f2c94c;
     -cd-status-clean:       #4da3ff;
     -cd-status-infected:    #ff5c5c;
-    -cd-status-repair:      #b58cff;
+    -cd-marker-repair:      #b58cff;
 
     /* bazowy kolor, ciemne paski, font */
     -fx-base:               #13263f;
@@ -48,6 +48,7 @@
 
 .motto{
     -fx-font-size:  16px;
+    -fx-font-family: "Arial"; /* czcionka System na macOS nie rysuje kursywy */
     -fx-font-style: italic;
     -fx-text-fill:  -cd-text-muted;
 }
@@ -105,7 +106,27 @@
 .status-suspicious  { -fx-text-fill:  -cd-status-suspicious; }
 .status-clean       { -fx-text-fill:  -cd-status-clean; }
 .status-infected    { -fx-text-fill:  -cd-status-infected; }
-.status-repair      { -fx-text-fill:  -cd-status-repair; }
+/*
+    Markery*/
+.marker-repair      { -fx-text-fill:  -cd-marker-repair; }
+
+.marker-isolated{
+    -fx-border-color:  -cd-text;
+    -fx-border-style:  dashed;
+    -fx-border-width:  2;
+    -fx-border-radius: 4;
+    -fx-padding:       4 8 4 8;
+}
+
+.marker-account-blocked{
+    -fx-font-family: "Arial"; /* jw. – kursywa */
+    -fx-font-style: italic;
+    -fx-text-fill:  -cd-accent;
+}
+
+.marker-critical{
+    -fx-font-weight:    bold;
+}
 /*
     ScrollPane, wewnętrzny viewport tła*/
 .scroll-pane{
